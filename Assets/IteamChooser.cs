@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class IteamChooser : MonoBehaviour
 {
-    
-    public Sprite[] gallery; 
+
+    public Sprite[] gallery;
     public Image displayImage;
-    public Button nextImg; 
-    public Button prevImg; 
-    public int i = 0; 
+    public Button nextImg;
+    public Button prevImg;
+    public int i = 0;
 
     public void BtnNext()
     {
@@ -31,5 +31,15 @@ public class IteamChooser : MonoBehaviour
     void Update()
     {
         displayImage.sprite = gallery[i];
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            BtnNext();
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            BtnPrev();
+        }
     }
 }
